@@ -1,2 +1,19 @@
-import java.util.*;
+package org.java_arrays_Easy;
 
+public class LongestSubarrayBr {
+	public static void main(String[] args) {
+		int arr[] = {1,2,3,1,1,1,1,4,2,3};
+		int k = 3;
+		int len = 0;
+		for(int i=0;i<arr.length;i++) {
+			int sum = 0;
+			for(int j=0;j<arr.length;j++) {
+				sum += arr[j];
+				if(sum == k) 
+					len = Math.max(sum, j-1+1);
+			}
+		}
+		System.out.println(len);
+	}
+
+}
